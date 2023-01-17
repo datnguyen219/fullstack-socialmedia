@@ -50,6 +50,7 @@ const PostWidget = ({
   return (
     <WidgetWrapper m="2rem 0">
       <Friend
+        loggedInUserId={loggedInUserId}
         friendId={postUserId}
         name={name}
         subtitle={location}
@@ -80,17 +81,7 @@ const PostWidget = ({
             <Typography>{likeCount}</Typography>
           </FlexBetween>
 
-          <FlexBetween gap="0.3rem">
-            <IconButton onClick={() => setIsComments(!isComments)}>
-              <ChatBubbleOutlineOutlined />
-            </IconButton>
-            <Typography>{comments.length}</Typography>
-          </FlexBetween>
         </FlexBetween>
-
-        <IconButton>
-          <ShareOutlined />
-        </IconButton>
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">
