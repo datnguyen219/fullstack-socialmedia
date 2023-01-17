@@ -42,7 +42,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
         <UserImage image={userPicturePath} size="55px" />
         <Box
           onClick={() => {
-            navigate(`/profile/${friendId}`);
+            navigate(`https://social-api-d2b4.onrender.com/profile/${friendId}`);
             navigate(0);
           }}
         >
