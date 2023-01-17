@@ -41,10 +41,6 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
       <FlexBetween gap="1rem">
         <UserImage image={userPicturePath} size="55px" />
         <Box
-          onClick={() => {
-            navigate(`https://social-api-d2b4.onrender.com/profile/${friendId}`);
-            navigate(0);
-          }}
         >
           <Typography
             color={main}
