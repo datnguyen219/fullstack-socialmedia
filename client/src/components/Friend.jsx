@@ -20,7 +20,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
   const medium = palette.neutral.medium;
 
   const isFriend = friends.find((friend) => friend._id === friendId);
-  const isPostOwner = friendId === loggedInUserId;
+  //const isPostOwner = friendId === loggedInUserId;
   const patchFriend = async () => {
     const response = await fetch(
       `https://social-api-d2b4.onrender.com/users/${_id}/${friendId}`,
@@ -65,7 +65,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
         </Box>
       </FlexBetween>
       
-      <IconButton disabled = {isPostOwner}
+      <IconButton
         onClick={() => patchFriend()}
         sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
       >
