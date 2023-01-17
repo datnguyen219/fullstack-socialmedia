@@ -12,7 +12,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
   const { _id } = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
-
+  const isOwner = loggedInUserId === friendId;
   const { palette } = useTheme();
   const primaryLight = palette.primary.light;
   const primaryDark = palette.primary.dark;
@@ -20,7 +20,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
   const medium = palette.neutral.medium;
 
   const isFriend = friends.find((friend) => friend._id === friendId);
-  //const isPostOwner = friendId === loggedInUserId;
+
   const patchFriend = async () => {
     const response = await fetch(
       `https://social-api-d2b4.onrender.com/users/${_id}/${friendId}`,
@@ -64,8 +64,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
           </Typography>
         </Box>
       </FlexBetween>
-      
-      <IconButton
+      <IconButton disabled = {isOwner}
         onClick={() => patchFriend()}
         sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
       >

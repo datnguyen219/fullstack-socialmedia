@@ -56,7 +56,7 @@ const Navbar = () => {
             },
           }}
         >
-          Home
+          HOME
         </Typography>
       </FlexBetween>
 
