@@ -23,7 +23,7 @@ const Friend = ({ loggedInUserId, friendId, name, subtitle, userPicturePath }) =
   const isPostOwner = friendId === loggedInUserId;
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `https://social-api-d2b4.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
